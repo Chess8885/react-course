@@ -1,10 +1,10 @@
 import React from 'react';
 
 export default function Employee(props) {
-    const { name, key } = props;
+    const { name, id } = props;
     return (
         <p>
-            {name} {key}
+            {name} {id}
         </p>
     );
 }
