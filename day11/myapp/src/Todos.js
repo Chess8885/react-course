@@ -25,6 +25,7 @@ const Todos = () => {
             ) : (
                 <CircularProgress />
             )}
+            { /* remove the logs */}
         </>
     );
 };
