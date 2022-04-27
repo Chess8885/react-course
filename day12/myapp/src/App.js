@@ -5,11 +5,15 @@ import Todos from "./Todos";
 import Todo from "./Todo";
 import store from './redux/configureStore';
 import Counter from "./counter";
+import {useSelector} from "react-redux";
 
 export default function App() {
+    const count = useSelector((state) => state.counter.count);
     return (
         <div>
-        <Counter/>
+            <h2>redux made easy</h2>
+                <p>{count}</p>
+            <Counter/>
         </div>
     );
 }
