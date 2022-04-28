@@ -1,13 +1,22 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./styles.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Todos from "./Todos";
 import Todo from "./Todo";
 import store from './redux/configureStore';
 import Counter from "./counter";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {getUser} from "./redux/ducks/user";
 
 export default function App() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getUser())
+    }, [dispatch]);
+
+    const user = useSelector((state) => state.user.user);
+
     const count = useSelector((state) => state.counter.count);
     return (
         <div>

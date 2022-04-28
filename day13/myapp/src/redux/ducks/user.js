@@ -12,7 +12,7 @@ export const setUser = (user) => ({
 });
 
 const initialState = {
-    count: 0
+    user: undefined
 };
 
 export default (state = initialState, action) => {
