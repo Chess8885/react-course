@@ -1,5 +1,6 @@
 # react-course-2022
 
+```
 Day 1 : Introduction
 Day 2 : useState & Basic Components Structure
 Day 3 : Props, Destructuring, and Spreading
@@ -15,3 +16,5 @@ Day 12 : Redux & React Intro - Redux Crash Course
 Day 13 : Introduction to Redux Saga and getting data from APIs
 Day 14 : Connect React to Express (useEffect and Redux Saga Examples)
 Day 15 : Redux Toolkit
+```
+
