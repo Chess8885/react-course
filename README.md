@@ -17,4 +17,3 @@ Day 13 : Introduction to Redux Saga and getting data from APIs
 Day 14 : Connect React to Express (useEffect and Redux Saga Examples)
 Day 15 : Redux Toolkit
 ```
-

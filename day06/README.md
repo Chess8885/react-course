@@ -1,0 +1,1 @@
+Day 6 : Spread Syntax + Spreading in React
