@@ -1,49 +1,35 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Counter from "./Counter";
+import { getUser } from "./redux/ducks/user";
 import "./styles.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Todos from "./Todos";
-import Todo from "./Todo";
-import store from './redux/configureStore';
-import Counter from "./counter";
-import {useDispatch, useSelector} from "react-redux";
-import {getUser} from "./redux/ducks/user";
 
 export default function App() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getUser())
+        dispatch(getUser());
     }, [dispatch]);
 
     const user = useSelector((state) => state.user.user);
+    console.log(user);
 
     const count = useSelector((state) => state.counter.count);
+    console.log(count);
+    const voters = [
+        "Anthony Sistilli ",
+        "Bob Smith",
+        "Stephanie Foo",
+        "Kevin Ma"
+    ];
     return (
-        <div>
-            <h2>redux made easy</h2>
-                <p>{count}</p>
-            <Counter/>
+        <div className="App">
+            {user && <h1> Hello, {user.firstName} </h1>}
+            <h1>Redux made easy</h1>
+            <h2> Total Votes: {count}</h2>
+            {voters.map((voter) => (
+                <Counter name={voter} />
+            ))}
         </div>
     );
 }
-
-{ /*
-export default function App() {
-    const [count, setCount] = useState(0);
-
-    const addCounter = () => {
-        setCount(count+1);
-    }
-    const removeCounter = () => {
-        setCount(count-1);
-    }
-    return (
-        <div>
-            <h2>redux made easy</h2>
-            <p>{count}</p>
-            <button onClick={addCounter}>add count</button>
-            <button onClick={removeCounter}>rem count</button>
-        </div>
-    );
-}
- */}
